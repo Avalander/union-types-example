@@ -1,9 +1,9 @@
-const UnionType = require('../union-type')
+const union = require('../../src/union-type').default
 
 const authorise = token => true
 
 
-const ApiErrors = UnionType('ApiErrors', [
+const ApiErrors = union('ApiErrors', [
 	'InvalidCredentials',
 	'NotFound',
 	'Other',
