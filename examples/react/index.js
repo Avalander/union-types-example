@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import UnionType from '../../src/union-type'
+import union from '../../src/union-type'
 
 
-const RemoteData = UnionType('RemoteData', [
+const RemoteData = union('RemoteData', [
 	'NotAsked',
 	'Pending',
 	'Success',
@@ -56,15 +56,15 @@ class Pony extends React.Component {
 			),
 			Success: ({ name, type, element }) => (
 				<div>
-					<span><strong>Name:</strong> {name}</span><br />
-					<span><strong>Type:</strong> {type}</span><br />
-					<span><strong>Element of Harmony:</strong> {element}</span><br />
+					<p><strong>Name:</strong> {name}</p>
+					<p><strong>Type:</strong> {type}</p>
+					<p><strong>Element of Harmony:</strong> {element}</p>
 					<button onClick={this.fetchData}>Reload</button>
 				</div>
 			),
 			Failure: ({ message }) => (
 				<div>
-					<span>{message}</span><br />
+					<p>{message}</p>
 					<button onClick={this.fetchData}>Retry</button>
 				</div>
 			)
